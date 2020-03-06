@@ -1,0 +1,68 @@
+create table tbl_seshat_systemname (
+system_id int identity(1,1) PRIMARY KEY not null,
+system_name varchar(100) NOT NULL,
+system_active bit NOT NULL DEFAULT 1,
+system_type varchar(50) NOT NULL
+)
+
+create table tbl_seshat_change_log (
+  log_id int identity(1,1) primary key not null,
+  system_id int not null, 
+  clerk_id int not null,
+  log_item_name varchar(150) not null,
+  log_description text,
+  log_jobref varchar(10),
+  dbdate datetime default getdate() not null,
+  CONSTRAINT FK_SystemName FOREIGN KEY (system_id) REFERENCES IT.dbo.tbl_seshat_systemname (system_id)
+)
+
+
+CREATE TABLE Sales.TempSalesReason (
+	TempID int NOT NULL,
+	Name  (50),     
+
+	
+
+);
+
+select *from tbl_seshat_change_log A
+inner join tbl_seshat_systemname B on B.system_id = A.system_id
+
+select * from tbl_seshat_change_log
+
+insert into tbl_seshat_systemname (system_type) VALUES
+('Seshat',1,'Web')
+
+insert into tbl_seshat_change_log values 
+(2,1234,'Log Change Matheus','test',null,getdate())
+
+
+$('#ddSystemName')
+Object { 0: select#ddSystemName.multi-select.form-control.select2-hidden-accessible
+, length: 1, context: HTMLDocument http://localhost:52679/Seshat/, selector: "#ddSystemName" }
+
+$("#ddSystemName").select2('val');
+Array [ "1", "2" ]
+
+$("#ddSystemName").select2('val');
+Array [ "1" ]
+
+$('#txtLogTitle').val()
+"sdsdfsd"
+$('#txtDtRange').data('daterangepicker').startDate;
+$('#txtDtRange').data('daterangepicker').endDate;
+Object { _isAMomentObject: true, _isUTC: false, _pf: {…}, _locale: {…}, _d: Date 2019-05-18T02:59:59.999Z, _isValid: true }
+
+$('#txtDtRange').data('daterangepicker').startDate;
+Object { _isAMomentObject: true, _isUTC: false, _pf: {…}, _locale: {…}, _d: Date 2019-05-17T03:00:00.000Z, _isValid: true }
+
+$('#txtDtRange').data('daterangepicker').startDate;
+Object { _isAMomentObject: true, _isUTC: false, _pf: {…}, _locale: {…}, _d: Date 2019-05-11T03:00:00.000Z, _isValid: true }
+
+$('#txtDtRange').data('daterangepicker').endDate;
+Object { _isAMomentObject: true, _isUTC: false, _pf: {…}, _locale: {…}, _d: Date 2019-05-18T02:59:59.999Z, _isValid: true }
+
+moment()
+Object { _isAMomentObject: true, _isUTC: false, _pf: {…}, _locale: {…}, _d: Date 2019-05-20T18:11:36.934Z }
+
+​
